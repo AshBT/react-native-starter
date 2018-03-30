@@ -5,38 +5,45 @@ import {
   Platform,
   Text,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import { Entypo as Icon } from '@expo/vector-icons';
 import { Colors, Fonts } from '../constants';
+
+const chartIcon = require('../../assets/images/pages/chart.png');
+const calendarIcon = require('../../assets/images/pages/calendar.png');
+const chatIcon = require('../../assets/images/pages/chat.png');
+const galleryIcon = require('../../assets/images/pages/gallery.png');
+const profileIcon = require('../../assets/images/pages/profile.png');
 
 export default function PagesScreen(props) {
   return (
     <View style={styles.container}>
       <View style={styles.row}>
         <TouchableOpacity style={styles.item}>
-          <Icon name="documents" size={25} color={Colors.primary} />
+          <Image resizeMode="contain" source={chartIcon} style={styles.itemImage} />
           <Text style={styles.itemText}>Charts</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.item}>
-          <Icon name="documents" size={25} color={Colors.primary} />
+          <Image resizeMode="contain" source={galleryIcon} style={styles.itemImage} />
           <Text style={styles.itemText}>Gallery</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.item}>
-          <Icon name="documents" size={25} color={Colors.primary} />
+          <Image resizeMode="contain" source={profileIcon} style={styles.itemImage} />
           <Text style={styles.itemText}>Profile</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.row}>
         <TouchableOpacity style={styles.item}>
-          <Icon name="documents" size={25} color={Colors.primary} />
+          <Image resizeMode="contain" source={chatIcon} style={styles.itemImage} />
           <Text style={styles.itemText}>Chats</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.item}>
-          <Icon name="documents" size={25} color={Colors.primary} />
+          <Image resizeMode="contain" source={calendarIcon} style={styles.itemImage} />
           <Text style={styles.itemText}>Calendar</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.item}>
-          <Icon name="documents" size={25} color={Colors.primary} />
+          <Image resizeMode="contain" source={profileIcon} style={styles.itemImage} />
           <Text style={styles.itemText}>Profile</Text>
         </TouchableOpacity>
       </View>
@@ -58,7 +65,7 @@ const styles = StyleSheet.create({
   item: {
     flex: 1,
     height: 120,
-    paddingVertical: 10,
+    paddingVertical: 20,
     borderColor: Colors.primaryLight,
     borderWidth: 1,
     borderRadius: 5,
@@ -67,7 +74,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   itemText: {
-    color: Colors.primaryLight,
+    color: Colors.primary,
     fontFamily: Fonts.primary,
-  }
+  },
+  itemImage: {
+    height: 35,
+  },
 });

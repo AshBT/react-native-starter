@@ -131,17 +131,17 @@ export default class GridsScreen extends React.Component {
 
     return (
       <View style={styles.container}>
-        <View style={styles.tabsContainer}>
+        <View style={{height: 50}}>
           <RadioGroup
-            selectedIndex={this.props.tabIndex}
-            items={this.props.tabs}
-            onChange={this.props.gridStateActions.switchTab}
-            underline
-          />
+              selectedIndex={this.props.tabIndex}
+              items={this.props.tabs}
+              onChange={this.props.gridStateActions.switchTab}
+              underline
+            />
         </View>
         <FlatList
           keyExtractor={item => item.id || item[0] && item[0].id}
-          style={{ backgroundColor: Colors.white, marginTop: 21, paddingHorizontal: 15, }}
+          style={{ backgroundColor: Colors.white, paddingHorizontal: 15, }}
           data={groupedData}
           renderItem={this._getRenderItemFunction()}
         />
@@ -197,12 +197,12 @@ const styles = StyleSheet.create({
   itemTwoContainer: {
     paddingBottom: 10,
     backgroundColor: 'white',
-    marginBottom: 10,
+    marginVertical: 5,
   },
   itemTwoContent: {
     padding: 20,
     position: 'relative',
-    marginHorizontal: -15,
+    marginHorizontal: Platform.OS === 'ios' ? -15 : 0,
     height: 150,
   },
   itemTwoTitle: {
