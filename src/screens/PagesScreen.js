@@ -28,7 +28,7 @@ export default function PagesScreen(props) {
           <Image resizeMode="contain" source={galleryIcon} style={styles.itemImage} />
           <Text style={styles.itemText}>Gallery</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.item}>
+        <TouchableOpacity onPress={() => props.navigate({ routeName: 'Profile' })} style={styles.item}>
           <Image resizeMode="contain" source={profileIcon} style={styles.itemImage} />
           <Text style={styles.itemText}>Profile</Text>
         </TouchableOpacity>

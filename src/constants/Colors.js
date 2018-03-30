@@ -5,6 +5,8 @@ export default {
   primaryGradientEnd: '#4f44b6',
   secondaryGradientStart: '#FF1358',
   secondaryGradientEnd: '#FF1358',
+  profileGradientStart: '#54CBF6',
+  profileGradientEnd: '#49D2D0',
   secondary: '#FF1358',
   grey: '#acacac',
   white: '#ffffff',

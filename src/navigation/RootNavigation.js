@@ -8,19 +8,35 @@ import { StackNavigator } from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
 
+import Profile from '../containers/ProfileScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+
+import { Colors, Fonts } from '../constants';
+
 const RootStackNavigator = StackNavigator(
   {
     Main: {
       screen: MainTabNavigator,
     },
+    Profile: {
+      screen: ProfileScreen,
+      navigationOptions: {
+        title: 'Profile',
+      }
+    },
   },
   {
-    navigationOptions: () => ({
+    navigationOptions: ({ navigation }) => ({
+      title: navigation.state.params,
       headerTitleStyle: {
-        fontFamily: 'Lato-Light',
+        fontFamily: Fonts.primaryLight,
       },
       headerStyle: {
-        backgroundColor: 'white',
+        backgroundColor: '#577AD9',
+      },
+      headerTitleStyle: {
+        color: Colors.white,
+        fontFamily: Fonts.primaryRegular,
       },
       headerTintColor: '#222222',
       headerLeft: props => (
