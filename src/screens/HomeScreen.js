@@ -23,7 +23,7 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
         <Text style={styles.title}>React Native Starter</Text>
       </View>
       <View style={[styles.section, styles.sectionLarge]}>
-        <Text style={styles.description}> A powerful starter project that bootstraps development of your mobile application and saves you 20000*</Text>
+        <Text style={styles.description}> A powerful starter project that bootstraps development of your mobile application and saves you $20 000*</Text>
         <View style={styles.priceContainer}>
           <View style={{ flexDirection: 'row' }}>
             <Text styleName="bold" style={styles.price}>{isExtended ? '$199.95' : '$49.95'}</Text>
@@ -37,6 +37,7 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
         <Button
           style={{ alignSelf: 'stretch' }}
           primary
+          rounded
           bgColor="#FF1358"
           caption="Purchase now!"
           onPress={this.onPurchasePress}

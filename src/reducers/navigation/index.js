@@ -1,12 +1,9 @@
-// @flow
 import { NavigationActions } from 'react-navigation';
 import includes from 'lodash/includes';
 
-import type { StateType, ActionType } from '../reducer';
-
 import AppNavigator from '../../navigation/RootNavigation';
 
-export default function NavigatorReducer(state: StateType, action: ActionType): StateType {
+export default function NavigatorReducer(state, action) {
   // Initial state
   if (!state) {
     return AppNavigator.router.getStateForAction(action, state);

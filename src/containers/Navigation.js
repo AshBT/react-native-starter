@@ -3,6 +3,7 @@ import NavigatorView from '../navigation/Navigation';
 
 export default connect(
   state => ({
+    authState: state.auth,
     navigatorState: state.navigation,
   }),
 )(NavigatorView);
