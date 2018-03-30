@@ -85,8 +85,9 @@ export default class AuthScreen extends React.Component {
 
         <View style={[styles.section, { paddingTop: 30 }]}>
           <Animated.Image
-            style={[styles.logo, this.state.isKeyboardVisible && { width: 90, height: 90 }, this.fadeIn(0)]}
-            source={require('../../assets/images/icon.png')}
+            resizeMode="contain"
+            style={[styles.logo, this.state.isKeyboardVisible && { height: 90 }, this.fadeIn(0)]}
+            source={require('../../assets/images/white-logo.png')}
           />
         </View>
 
@@ -129,19 +130,22 @@ export default class AuthScreen extends React.Component {
                   style={styles.socialButton}
                   bordered
                   rounded
-                  icon={require('../../assets/images/pages/chat.png')}
+                  icon={require('../../assets/images/google-plus.png')}
+                  onPress={() => this.props.authStateActions.skipLogin()}
                 />
                 <Button
                   style={[styles.socialButton, styles.socialButtonCenter]}
                   bordered
                   rounded
-                  icon={require('../../assets/images/pages/chat.png')}
+                  icon={require('../../assets/images/twitter.png')}
+                  onPress={() => this.props.authStateActions.skipLogin()}
                 />
                 <Button
                   style={styles.socialButton}
                   bordered
                   rounded
-                  icon={require('../../assets/images/pages/chat.png')}
+                  icon={require('../../assets/images/facebook.png')}
+                  onPress={() => this.props.authStateActions.skipLogin()}
                 />
               </View>
             )}
@@ -203,7 +207,6 @@ const styles = StyleSheet.create({
   },
   logo: {
     height: 150,
-    width: 150,
   },
   socialLoginContainer: {
     flexDirection: 'row',
