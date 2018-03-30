@@ -7,6 +7,8 @@ import {
   TextInput,
 } from 'react-native';
 
+import { Fonts } from '../constants';
+
 class RNSTextInput extends React.Component {
   static propTypes = {
     type: PropTypes.oneOf(['primary', 'secondary', 'bordered']),
@@ -40,6 +42,13 @@ const styles = StyleSheet.create({
   default: {
     height: HEIGHT,
     color: 'white',
+    fontFamily: Fonts.primaryRegular,
+    ...Platform.select({
+      android: {
+        paddingLeft: 5,
+        opacity: 0.9,
+      },
+    }),
   },
   bordered: {
     ...Platform.select({

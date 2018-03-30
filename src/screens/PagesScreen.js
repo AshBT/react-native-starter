@@ -42,9 +42,9 @@ export default function PagesScreen(props) {
           <Image resizeMode="contain" source={calendarIcon} style={styles.itemImage} />
           <Text style={styles.itemText}>Calendar</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.item}>
+        <TouchableOpacity onPress={props.authStateActions.loggedOut} style={styles.item}>
           <Image resizeMode="contain" source={profileIcon} style={styles.itemImage} />
-          <Text style={styles.itemText}>Profile</Text>
+          <Text style={styles.itemText}>Login</Text>
         </TouchableOpacity>
       </View>
     </View>

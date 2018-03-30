@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import { StatusBar, StyleSheet, View } from 'react-native';
+import { StatusBar, StyleSheet, View, UIManager } from 'react-native';
 import { AppLoading, Font } from 'expo';
 import { Provider } from 'react-redux';
 import RootNavigation from './src/containers/Navigation';
@@ -11,6 +11,10 @@ export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
   };
+
+  componentDidMount() {
+    UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
+  }
 
   _loadResourcesAsync = async () => Promise.all([
     // TODO: Remove unudsed fonts to speed up application loading

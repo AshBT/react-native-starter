@@ -76,7 +76,7 @@ export default class AuthScreen extends React.Component {
     const isRegister = this.state.formState === FORM_STATES.REGISTER;
 
     return (
-      <View style={[styles.container, { paddingBottom: this.state.isKeyboardVisible ? 200 : 0 }]}>
+      <View style={[styles.container, { paddingBottom: this.state.isKeyboardVisible ? 220 : 0 }]}>
         <Image
           source={require('../../assets/images/background.png')}
           style={styles.backgroundImage}
@@ -85,7 +85,7 @@ export default class AuthScreen extends React.Component {
 
         <View style={[styles.section, { paddingTop: 30 }]}>
           <Animated.Image
-            style={[styles.logo, this.fadeIn(0)]}
+            style={[styles.logo, this.state.isKeyboardVisible && { width: 90, height: 90 }, this.fadeIn(0)]}
             source={require('../../assets/images/icon.png')}
           />
         </View>

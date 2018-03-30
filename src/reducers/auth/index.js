@@ -69,7 +69,7 @@ export default function AuthStateReducer(state = initialState, action = {}) {
             hasPassedWalkthrough: true,
           });
         case LOGGED_OUT:
-          return Object.assign({}. state, {
+          return Object.assign({}, state, {
             isLoggedIn: false,
             hasSkippedLogin: false,
             loggedOut: true,
