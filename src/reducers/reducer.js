@@ -4,6 +4,7 @@ import NavigationStateReducer from './navigation';
 import CalendarReducer from './calendar';
 import GridReducer from './grid';
 // ## Generator Reducer Imports
+import ChatReducer from './chat';
 import GalleryReducer from './gallery';
 import AuthReducer from './auth';
 
@@ -12,6 +13,8 @@ export default combineReducers({
   calendar: CalendarReducer,
   grid: GridReducer,
   // ## Generator Reducers
+
+  chat: ChatReducer,
 
   gallery: GalleryReducer,
 

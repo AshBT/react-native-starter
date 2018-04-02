@@ -7,12 +7,13 @@ import {
   TextInput,
 } from 'react-native';
 
-import { Fonts } from '../constants';
+import { Fonts, Colors } from '../constants';
 
 class RNSTextInput extends React.Component {
   static propTypes = {
     type: PropTypes.oneOf(['primary', 'secondary', 'bordered']),
     style: PropTypes.number,
+    placeholderTextColor: PropTypes.string,
   };
 
   static defaultProps = {
@@ -20,13 +21,20 @@ class RNSTextInput extends React.Component {
   };
 
   render() {
+    const finalStyle = [
+      this.props.style,
+      styles.default,
+      this.props.type === 'bordered' && styles.bordered,
+      this.props.dark && styles.dark,
+    ];
+
     return (
       <View style={{ alignSelf: 'stretch', flexDirection: 'column' }}>
         <TextInput
-          placeholderTextColor={'white'}
+          placeholderTextColor={this.props.placeholderTextColor || Colors.white}
           underlineColorAndroid="white"
           {...this.props}
-          style={[this.props.style, styles.default, this.props.type === 'bordered' && styles.bordered]}
+          style={finalStyle}
         />
         { Platform.OS === 'ios' &&
           <View style={{ height: 0.5, backgroundColor: 'white' }} />
@@ -51,14 +59,13 @@ const styles = StyleSheet.create({
     }),
   },
   bordered: {
-    ...Platform.select({
-      ios: {
-        borderBottomWidth: 0.5,
-        borderBottomColor: 'white',
-        opacity: 0.7,
-      },
-    }),
-
+    borderWidth: 0.5,
+    borderColor: Colors.lightGray,
+    borderRadius: 20,
+    paddingHorizontal: 20,
+  },
+  dark: {
+    color: Colors.gray,
   },
   primary: {
     borderRadius: HEIGHT / 2,

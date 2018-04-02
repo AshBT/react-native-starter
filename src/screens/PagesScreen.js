@@ -34,7 +34,7 @@ export default function PagesScreen(props) {
         </TouchableOpacity>
       </View>
       <View style={styles.row}>
-        <TouchableOpacity style={styles.item}>
+        <TouchableOpacity onPress={() => props.navigate({ routeName: 'Chat' })} style={styles.item}>
           <Image resizeMode="contain" source={chatIcon} style={styles.itemImage} />
           <Text style={styles.itemText}>Chats</Text>
         </TouchableOpacity>

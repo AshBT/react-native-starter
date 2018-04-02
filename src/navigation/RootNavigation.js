@@ -11,6 +11,7 @@ import MainTabNavigator from './MainTabNavigator';
 import ProfileScreen from '../containers/ProfileScreen';
 import GalleryScreen from '../containers/GalleryScreen';
 import ArticleScreen from '../containers/ArticleScreen';
+import ChatScreen from '../containers/ChatScreen';
 
 import { Colors, Fonts } from '../constants';
 
@@ -35,6 +36,12 @@ const RootStackNavigator = StackNavigator(
       screen: ArticleScreen,
       navigationOptions: {
         title: 'Product View',
+      }
+    },
+    Chat: {
+      screen: ChatScreen,
+      navigationOptions: {
+        title: 'Chat',
       }
     },
   },
