@@ -10,6 +10,7 @@ import MainTabNavigator from './MainTabNavigator';
 
 import ProfileScreen from '../containers/ProfileScreen';
 import GalleryScreen from '../containers/GalleryScreen';
+import ArticleScreen from '../containers/ArticleScreen';
 
 import { Colors, Fonts } from '../constants';
 
@@ -30,10 +31,17 @@ const RootStackNavigator = StackNavigator(
         title: 'Gallery',
       }
     },
+    Article: {
+      screen: ArticleScreen,
+      navigationOptions: {
+        title: 'Product View',
+      }
+    },
   },
   {
     navigationOptions: ({ navigation }) => ({
-      title: navigation.state.params,
+      title: (typeof navigation.state.params === 'object' && navigation.state.params.title)
+        ? navigation.state.params.title : navigation.state.params,
       headerTitleStyle: {
         fontFamily: Fonts.primaryLight,
       },

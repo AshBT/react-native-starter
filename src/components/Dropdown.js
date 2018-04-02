@@ -16,11 +16,15 @@ class RNSDropDown extends React.Component {
     items: PropTypes.arrayOf(PropTypes.string).isRequired,
     onSelect: PropTypes.func.isRequired,
     selectedIndex: PropTypes.number.isRequired,
+    color: PropTypes.string,
+    borderColor: PropTypes.string,
   };
 
   static defaultProps = {
     placeholder: 'Please Select...',
     selectedIndex: -1,
+    color: Colors.primary,
+    borderColor: Colors.primary,
   };
 
   constructor(props) {
@@ -63,19 +67,19 @@ class RNSDropDown extends React.Component {
         }}
         renderRow={(text) => (
           <View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>
-            <Text style={{ color: Colors.primary }}>{text}</Text>
+            <Text style={{ color: this.props.color }}>{text}</Text>
           </View>
         )}
         onSelect={this.props.onSelect}
       >
         <View
-          style={[styles.container, this.props.style && this.props.style]}
+          style={[styles.container, this.props.style && this.props.style, { borderColor: this.props.borderColor }]}
         >
-          <Text style={{ color: Colors.primary }}>
+          <Text style={{ color: this.props.color }}>
             {this.props.selectedIndex > -1 && this.props.items[this.props.selectedIndex] ?
               this.props.items[this.props.selectedIndex] : this.props.placeholder}
           </Text>
-          <Icon name={this.state.isOpened ? 'angle-up' : 'angle-down'} color={Colors.primary} size={20} style={styles.icon} />
+          <Icon name={this.state.isOpened ? 'angle-up' : 'angle-down'} color={this.props.color} size={20} style={styles.icon} />
         </View>
       </ModalDropdown>
     );
