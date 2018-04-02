@@ -3,33 +3,48 @@ import {
   StyleSheet,
   View,
   Platform,
-  Text,
   Image,
   TouchableOpacity,
+  Linking,
 } from 'react-native';
 
 import { Fonts, Colors } from '../constants';
 import Button from '../components/Button';
+import {
+  Text,
+  Title,
+} from '../components/StyledText';
 
 export default function HomeScreen({ isExtended, setIsExtended }) {
+  const rnsUrl = 'https://reactnativestarter.com';
+  const handleClick = () => {
+    Linking.canOpenURL(rnsUrl).then(supported => {
+      if (supported) {
+        Linking.openURL(rnsUrl);
+      } else {
+        console.log("Don't know how to open URI: " + rnsUrl);
+      }
+    });
+  };
+
   return (
     <View style={styles.container}>
       <Image style={styles.bgImage} source={require('../../assets/images/background.png')} />
       <View style={styles.section}>
-        <Text style={{ fontSize: 20, color: Colors.white, fontFamily: Fonts.primaryRegular }}>Home</Text>
+        <Text size={20} white>Home</Text>
       </View>
       <View style={styles.section}>
-        <Text style={styles.titleDescription}>The smartest Way to build your mobile app</Text>
-        <Text style={styles.title}>React Native Starter</Text>
+        <Text color="#19e7f7" size={15}>The smartest Way to build your mobile app</Text>
+        <Text size={30} bold white style={styles.title}>React Native Starter</Text>
       </View>
       <View style={[styles.section, styles.sectionLarge]}>
-        <Text style={styles.description}> A powerful starter project that bootstraps development of your mobile application and saves you $20 000*</Text>
+        <Text color="#19e7f7" hCenter size={15} style={styles.description}> A powerful starter project that bootstraps development of your mobile application and saves you $20 000*</Text>
         <View style={styles.priceContainer}>
           <View style={{ flexDirection: 'row' }}>
-            <Text styleName="bold" style={styles.price}>{isExtended ? '$199.95' : '$49.95'}</Text>
+            <Text white bold size={50} style={styles.price}>{isExtended ? '$199.95' : '$49.95'}</Text>
           </View>
           <TouchableOpacity style={styles.priceLink} onPress={() => isExtended ? setIsExtended(false) : setIsExtended(true)}>
-            <Text style={styles.priceLinkText}>{isExtended ? 'Multiple Applications License' : 'Single Application License'}</Text>
+            <Text white size={14}>{isExtended ? 'Multiple Applications License' : 'Single Application License'}</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -39,8 +54,8 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
           primary
           rounded
           bgColor="#FF1358"
-          caption="Purchase now!"
-          onPress={this.onPurchasePress}
+          caption="Purchase now"
+          onPress={handleClick}
         />
       </View>
     </View>
@@ -78,10 +93,6 @@ const styles = StyleSheet.create({
   },
   description: {
     padding: 15,
-    fontSize: 15,
-    color: '#C3C3C3',
-    textAlign: 'center',
-    color: '#19e7f7',
     lineHeight: 25,
   },
   titleDescription: {
@@ -91,24 +102,13 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   title: {
-    fontSize: 30,
     marginTop: 30,
-    color: Colors.white,
-    fontFamily: Fonts.primaryBold,
   },
   price: {
-    fontSize: 50,
-    color: Colors.white,
     marginBottom: 5,
-    fontFamily: Fonts.primaryBold,
   },
   priceLink: {
     borderBottomWidth: 1,
     borderBottomColor: Colors.primary,
-  },
-  priceLinkText: {
-    color: Colors.white,
-    fontSize: 14,
-    fontFamily: Fonts.primaryRegular,
   },
 });

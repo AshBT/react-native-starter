@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
   caption: {
     letterSpacing: 1,
     fontSize: 15,
-    fontFamily: Fonts.primaryRegular,
+    fontFamily: Fonts.primaryBold,
   },
   captionSmall: {
     fontSize: 12,

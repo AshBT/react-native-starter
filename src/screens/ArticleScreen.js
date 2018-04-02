@@ -94,9 +94,11 @@ export default function ArticleScreen(props) {
               require('../../assets/images/nike2.jpg'),
             ]}
           />
-          <View style={styles.badge}>
-            <Caption white bold>{itemParams.badge}</Caption>
-          </View>
+          { itemParams.badge && (
+            <View style={styles.badge}>
+              <Caption white bold>{itemParams.badge}</Caption>
+            </View>
+          )}
         </View>
         <View style={styles.bodyContainer}>
           <View style={styles.bodyHeading}>

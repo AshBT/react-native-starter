@@ -13,6 +13,7 @@ function applyGeneralStyles(props) {
     props.light && styles.light,
     props.white && styles.white,
     props.underline && styles.underline,
+    props.hCenter && { textAlign: 'center' },
     props.lineThrough && styles.lineThrough,
     props.color && { color: props.color },
     props.size && { fontSize: props.size },
