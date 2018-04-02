@@ -17,15 +17,15 @@ class RNSTextInput extends React.Component {
   };
 
   static defaultProps = {
-    type: 'bordered',
+    type: 'primary'
   };
 
   render() {
     const finalStyle = [
-      this.props.style,
       styles.default,
       this.props.type === 'bordered' && styles.bordered,
       this.props.dark && styles.dark,
+      this.props.style && this.props.style,
     ];
 
     return (
