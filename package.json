@@ -31,6 +31,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
     "react-native-calendars": "^1.17.4",
     "react-native-image-progress": "^1.0.1",
+    "react-native-lightbox": "^0.7.0",
     "react-native-modal": "^5.0.0",
     "react-native-modal-datetime-picker": "^4.13.0",
     "react-native-modal-dropdown": "^0.6.2",

@@ -24,7 +24,7 @@ export default function PagesScreen(props) {
           <Image resizeMode="contain" source={chartIcon} style={styles.itemImage} />
           <Text style={styles.itemText}>Charts</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.item}>
+        <TouchableOpacity onPress={() => props.navigate({ routeName: 'Gallery' })} style={styles.item}>
           <Image resizeMode="contain" source={galleryIcon} style={styles.itemImage} />
           <Text style={styles.itemText}>Gallery</Text>
         </TouchableOpacity>

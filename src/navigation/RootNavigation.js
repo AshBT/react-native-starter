@@ -8,8 +8,8 @@ import { StackNavigator } from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
 
-import Profile from '../containers/ProfileScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import ProfileScreen from '../containers/ProfileScreen';
+import GalleryScreen from '../containers/GalleryScreen';
 
 import { Colors, Fonts } from '../constants';
 
@@ -22,6 +22,12 @@ const RootStackNavigator = StackNavigator(
       screen: ProfileScreen,
       navigationOptions: {
         title: 'Profile',
+      }
+    },
+    Gallery: {
+      screen: GalleryScreen,
+      navigationOptions: {
+        title: 'Gallery',
       }
     },
   },
