@@ -11,7 +11,8 @@ import MainTabNavigator from './MainTabNavigator';
 import ProfileScreen from '../containers/ProfileScreen';
 import GalleryScreen from '../containers/GalleryScreen';
 import ArticleScreen from '../containers/ArticleScreen';
-import ChatScreen from '../containers/ChatScreen';
+import ChatScreen from '../containers/chat/ChatScreen';
+import MessagesScreen from '../containers/chat/MessagesScreen';
 
 import { Colors, Fonts } from '../constants';
 
@@ -43,6 +44,9 @@ const RootStackNavigator = StackNavigator(
       navigationOptions: {
         title: 'Chat',
       }
+    },
+    Messages: {
+      screen: MessagesScreen,
     },
   },
   {

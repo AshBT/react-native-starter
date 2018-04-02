@@ -3,10 +3,10 @@ import { compose, lifecycle, withState, } from 'recompose';
 import { bindActionCreators } from 'redux';
 import { NavigationActions } from 'react-navigation';
 
-import ChatScreen from '../screens/chat/ChatScreen';
+import ChatScreen from '../../screens/chat/ChatScreen';
 import {
   loadMessagesList
-} from '../reducers/chat';
+} from '../../reducers/chat';
 
 export default compose(
   connect(
