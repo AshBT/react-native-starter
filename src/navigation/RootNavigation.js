@@ -50,7 +50,10 @@ const RootStackNavigator = StackNavigator(
       screen: MessagesScreen,
     },
     Charts: {
-      screen: ChartsScreen
+      screen: ChartsScreen,
+      navigationOptions: {
+        title: 'Chart',
+      }
     }
   },
   {
