@@ -13,6 +13,7 @@ import GalleryScreen from '../containers/GalleryScreen';
 import ArticleScreen from '../containers/ArticleScreen';
 import ChatScreen from '../containers/chat/ChatScreen';
 import MessagesScreen from '../containers/chat/MessagesScreen';
+import ChartsScreen from '../containers/ChartsScreen';
 
 import { Colors, Fonts } from '../constants';
 
@@ -48,6 +49,9 @@ const RootStackNavigator = StackNavigator(
     Messages: {
       screen: MessagesScreen,
     },
+    Charts: {
+      screen: ChartsScreen
+    }
   },
   {
     navigationOptions: ({ navigation }) => ({

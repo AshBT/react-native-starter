@@ -20,7 +20,7 @@ export default function PagesScreen(props) {
   return (
     <View style={styles.container}>
       <View style={styles.row}>
-        <TouchableOpacity style={styles.item}>
+        <TouchableOpacity onPress={() => props.navigate({ routeName: 'Charts' })} style={styles.item}>
           <Image resizeMode="contain" source={chartIcon} style={styles.itemImage} />
           <Text style={styles.itemText}>Charts</Text>
         </TouchableOpacity>
