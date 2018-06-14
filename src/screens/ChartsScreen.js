@@ -10,7 +10,7 @@ import Svg from 'react-native-svg';
 import {
   VictoryPie,
   VictoryChart,
-  VictoryCandlestick
+  VictoryCandlestick,
 } from 'victory-native';
 
 import { Colors, Fonts } from '../constants';
@@ -26,11 +26,14 @@ const pieData = [
 
 // TODO: remove temporary data
 const candlestickData = [
-  {x: new Date(2016, 6, 1), open: 5, close: 10, high: 15, low: 0},
-  {x: new Date(2016, 6, 2), open: 10, close: 15, high: 20, low: 5},
-  {x: new Date(2016, 6, 3), open: 15, close: 20, high: 22, low: 10},
-  {x: new Date(2016, 6, 4), open: 20, close: 10, high: 25, low: 7},
-  {x: new Date(2016, 6, 5), open: 10, close: 8, high: 15, low: 5}
+  { x: 1, open: 9, close: 30, high: 56, low: 7 },
+  { x: 2, open: 80, close: 40, high: 120, low: 10 },
+  { x: 3, open: 50, close: 80, high: 90, low: 20 },
+  { x: 4, open: 70, close: 22, high: 70, low: 5 },
+  { x: 5, open: 20, close: 35, high: 50, low: 10 },
+  { x: 6, open: 35, close: 30, high: 40, low: 3 },
+  { x: 7, open: 30, close: 90, high: 95, low: 30 },
+  { x: 8, open: 80, close: 81, high: 83, low: 75 }
 ];
 
 export default function ChartsScreen(props) {
@@ -55,7 +58,7 @@ export default function ChartsScreen(props) {
       <Text style={styles.chartLabelText}>Chart</Text>
       <VictoryChart width={290} height={290}>
         <VictoryCandlestick
-          candleColors={{ positive: "#5f5c5b", negative: "#c43a31" }}
+          candleColors={{ positive: "#19e7f7", negative: "#f6b24e" }}
           data={candlestickData}
         />
       </VictoryChart>
@@ -87,7 +90,7 @@ export default function ChartsScreen(props) {
 
         { _renderPieChart() }
 
-        {/*{ _renderCandleChart() }*/}
+        { _renderCandleChart() }
 
         {/*{ _renderGraphChart() }*/}
 
