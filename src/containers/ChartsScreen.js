@@ -1,15 +1,22 @@
 import { connect } from 'react-redux';
-import { compose, withState } from 'recompose';
+import { compose, withState, lifecycle } from 'recompose';
 
-import { loadItems } from '../reducers/charts';
+import { loadChartsData } from '../reducers/charts';
 
 import ChartsScreen from '../screens/ChartsScreen';
 
 export default compose(
   connect(
     state => ({
+      data: state.charts.data
     }),
     dispatch => ({
+      loadChartsData: () => dispatch(loadChartsData())
     }),
-  )
+  ),
+  lifecycle({
+    componentDidMount() {
+      this.props.loadChartsData();
+    }
+  })
 )(ChartsScreen);
