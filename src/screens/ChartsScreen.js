@@ -6,11 +6,11 @@ import {
   Text,
   ScrollView
 } from 'react-native';
-import Svg from 'react-native-svg';
 import {
   VictoryPie,
   VictoryChart,
   VictoryCandlestick,
+  VictoryLine
 } from 'victory-native';
 
 import { Colors, Fonts } from '../constants';
@@ -34,6 +34,20 @@ const candlestickData = [
   { x: 6, open: 35, close: 30, high: 40, low: 3 },
   { x: 7, open: 30, close: 90, high: 95, low: 30 },
   { x: 8, open: 80, close: 81, high: 83, low: 75 }
+];
+
+const lineData = [
+  { x: 1, y: 1 },
+  { x: 2, y: 3.5 },
+  { x: 3, y: 3 },
+  { x: 4, y: 2 },
+  { x: 5, y: 4.5 },
+  { x: 3.5, y: 3 },
+  { x: 5, y: 6 },
+  { x: 6, y: 5 },
+  { x: 8, y: 8 },
+  { x: 12, y: 9 },
+  { x: 14, y: 12 },
 ];
 
 export default function ChartsScreen(props) {
@@ -67,17 +81,10 @@ export default function ChartsScreen(props) {
 
   const _renderGraphChart = () => (
     <View style={[styles.chartView, { marginBottom: 20 }]}>
-      <Text>Voronoi Container</Text>
-      <View style={{ borderWidth: 1 }}>
-        <Svg>
-          <VictoryChart width={290} height={290}>
-            <VictoryCandlestick
-              candleColors={{ positive: "#5f5c5b", negative: "#c43a31" }}
-              data={candlestickData}
-            />
-          </VictoryChart>
-        </Svg>
-      </View>
+      <Text style={styles.chartLabelText}>Voronoi Container</Text>
+      <VictoryChart width={290} height={290}>
+        <VictoryLine data={lineData} style={{ data:{ stroke: Colors.primaryGradientStart }}}/>
+      </VictoryChart>
     </View>
   );
 
@@ -92,7 +99,7 @@ export default function ChartsScreen(props) {
 
         { _renderCandleChart() }
 
-        {/*{ _renderGraphChart() }*/}
+        { _renderGraphChart() }
 
       </View>
     </ScrollView>
