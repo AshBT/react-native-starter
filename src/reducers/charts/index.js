@@ -80,7 +80,7 @@ export function loadChartsData() {
 
 const initialState = {
   data: null,
-  isLoading: false
+  isLoading: true
 };
 
 export default function ChartsStateReducer(state = initialState, action) {
