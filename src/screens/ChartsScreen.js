@@ -11,7 +11,8 @@ import {
   VictoryPie,
   VictoryChart,
   VictoryCandlestick,
-  VictoryLine
+  VictoryLine,
+  VictoryBoxPlot,
 } from 'victory-native';
 
 const candleData = [
@@ -59,7 +60,7 @@ export default function ChartsScreen(props) {
           />
         </View>
         <View style={styles.chartView}>
-          <Text style={styles.chartLabelText}>Chart</Text>
+          <Text style={styles.chartLabelText}>Candlestick Chart</Text>
           <VictoryChart width={290} height={290}>
             <VictoryCandlestick
               candleColors={{ positive: "#19e7f7", negative: "#f6b24e" }}
@@ -71,6 +72,23 @@ export default function ChartsScreen(props) {
           <Text style={styles.chartLabelText}>Voronoi Container</Text>
           <VictoryChart width={290} height={290}>
             <VictoryLine data={line} style={{ data:{ stroke: Colors.primaryGradientStart }}}/>
+          </VictoryChart>
+        </View>
+
+        <View style={[styles.chartView, { marginBottom: 20 }]}>
+          <Text style={styles.chartLabelText}>Box Plot</Text>
+          <VictoryChart domainPadding={50}>
+            <VictoryBoxPlot
+              minLabels maxLabels
+              boxWidth={10}
+              data={[
+                { x: "red", y: [5, 10, 9, 2] },
+                { x: "blue", y: [1, 15, 6, 8] },
+                { x: "green", y: [3, 5, 6, 9] },
+                { x: "yellow", y: [5, 20, 8, 12] },
+                { x: "white", y: [2, 11, 12, 13] }
+              ]}
+            />
           </VictoryChart>
         </View>
       </View>
