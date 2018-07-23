@@ -14,6 +14,18 @@ import {
   VictoryLine
 } from 'victory-native';
 
+const candleData = [
+  { x: 1, open: 9, close: 30, high: 56, low: 7 },
+  { x: 2, open: 80, close: 40, high: 120, low: 10 },
+  { x: 3, open: 50, close: 80, high: 90, low: 20 },
+  { x: 4, open: 70, close: 22, high: 70, low: 5 },
+  { x: 5, open: 20, close: 35, high: 50, low: 10 },
+  { x: 6, open: 35, close: 30, high: 40, low: 3 },
+  { x: 7, open: 30, close: 90, high: 95, low: 30 },
+  { x: 8, open: 80, close: 81, high: 83, low: 75 }
+];
+
+
 import { Colors, Fonts } from '../constants';
 
 export default function ChartsScreen(props) {
@@ -35,14 +47,15 @@ export default function ChartsScreen(props) {
       <View style={styles.background}>
         <View style={styles.chartView}>
           <Text style={styles.chartLabelText}>Pie Chart</Text>
-          <VictoryPie width={290}
-                      height={290}
-                      data={pie}
-                      colorScale={['#19e7f7','#9af2f9','#52a6e9','#829bf8','#6271d1','#f6b24e']}
-                      innerRadius={45}
-                      labelRadius={65}
-                      padAngle={1}
-                      style={{ labels: { fill: Colors.white, fontSize: 18 }}}
+          <VictoryPie
+            width={290}
+            height={290}
+            data={pie}
+            colorScale={['#19e7f7','#9af2f9','#52a6e9','#829bf8','#6271d1','#f6b24e']}
+            innerRadius={45}
+            labelRadius={65}
+            padAngle={1}
+            style={{ labels: { fill: Colors.white, fontSize: 18 }}}
           />
         </View>
         <View style={styles.chartView}>
@@ -50,7 +63,7 @@ export default function ChartsScreen(props) {
           <VictoryChart width={290} height={290}>
             <VictoryCandlestick
               candleColors={{ positive: "#19e7f7", negative: "#f6b24e" }}
-              data={candle}
+              data={candleData}
             />
           </VictoryChart>
         </View>

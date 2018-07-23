@@ -59,7 +59,8 @@ export function loadChartsData() {
       return item;
     });
 
-    const newCandlestickData = candlestickDataTemplate.map((item) => {
+    const newCandlestickData = candlestickDataTemplate.map((item, index) => {
+      item.x = index + 1;
       item.open = Math.floor(Math.random() * 100) + 1;
       item.close = Math.floor(Math.random() * 100) + 1;
       item.hight = Math.floor(Math.random() * 120) + 1;
