@@ -1,24 +1,35 @@
 {
   "expo": {
-    "name": "react-native-starter",
-    "description": "A very interesting project.",
+    "name": "React Native Starter",
+    "description": "A powerful starter project that bootstraps development of your mobile application ",
     "slug": "react-native-starter",
+    "githubUrl": "https://github.com/flatlogic/react-native-starter-full",
+    "primaryColor": "#DB1E21",
     "privacy": "public",
     "sdkVersion": "28.0.0",
     "platforms": ["ios", "android"],
-    "version": "1.0.0",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
+    "assetBundlePatterns": [
+      "assets/**/**"
+    ],
     "splash": {
-      "image": "./assets/images/background.png",
+      "image": "./assets/images/background-red.png",
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.reactnativestarter.full"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
+    },
+    "android": {
+      "package": "com.reactnativestarter.full",
+      "versionCode": 2,
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.reactnativestarter.full"
     }
   }
 }
